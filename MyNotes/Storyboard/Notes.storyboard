@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My NotesVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MyNotesVC" id="Y6W-OH-hqX" customClass="MyNotesVC" customModule="MyNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vap-AQ-asN">
+                                <rect key="frame" x="0.0" y="59" width="393" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rva-7v-sSm">
+                                        <rect key="frame" x="25.000000000000007" y="12.333333333333329" width="120.66666666666669" height="35.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Rva-7v-sSm" firstAttribute="leading" secondItem="Vap-AQ-asN" secondAttribute="leading" constant="25" id="DpZ-cp-oSc"/>
+                                    <constraint firstAttribute="height" constant="60" id="GMT-Bd-fTi"/>
+                                    <constraint firstItem="Rva-7v-sSm" firstAttribute="centerY" secondItem="Vap-AQ-asN" secondAttribute="centerY" id="Gvz-on-BkD"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HLB-6D-x1P">
+                                <rect key="frame" x="0.0" y="134" width="393" height="684"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="P9m-sL-F5a"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="2tO-tc-7vD"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kue-DS-PaX">
+                                <rect key="frame" x="194.66666666666663" y="763" width="183.33333333333337" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VKH-RZ-iWK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Create New Note" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" red="0.91764705882352937" green="0.89411764705882346" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="newNoteBtnActn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="v1m-aE-KZ3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Vap-AQ-asN" secondAttribute="trailing" id="2r1-O6-6SH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="HLB-6D-x1P" secondAttribute="bottom" id="Ks7-AM-mE6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Kue-DS-PaX" secondAttribute="bottom" constant="15" id="ctH-50-xvT"/>
+                            <constraint firstItem="Vap-AQ-asN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jY0-7v-iOm"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Kue-DS-PaX" secondAttribute="trailing" constant="15" id="kq0-HR-fsa"/>
+                            <constraint firstItem="Vap-AQ-asN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="oHv-hq-VvG"/>
+                            <constraint firstItem="HLB-6D-x1P" firstAttribute="top" secondItem="Vap-AQ-asN" secondAttribute="bottom" constant="15" id="sUA-BL-ylr"/>
+                            <constraint firstItem="HLB-6D-x1P" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wKv-kO-8RJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HLB-6D-x1P" secondAttribute="trailing" id="zZQ-gE-xH0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VfY-2V-NE3"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="greetingLbl" destination="Rva-7v-sSm" id="SRo-ic-Mch"/>
+                        <outlet property="newNoteBtn" destination="Kue-DS-PaX" id="fmH-Mi-gSM"/>
+                        <outlet property="tableView" destination="HLB-6D-x1P" id="TK5-aw-Chs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="983.96946564885491" y="-2.1126760563380285"/>
+        </scene>
+        <!--NoteVC-->
+        <scene sceneID="io4-7o-49D">
+            <objects>
+                <viewController storyboardIdentifier="NoteVC" id="Z93-dS-yYU" customClass="NoteVC" customModule="MyNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QNB-94-eVL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXI-RQ-kDs">
+                                <rect key="frame" x="0.0" y="59" width="393" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Heading" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mip-sv-h8Q">
+                                        <rect key="frame" x="15" y="7.3333333333333286" width="300" height="45.333333333333336"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quc-5H-e5b">
+                                        <rect key="frame" x="330" y="12.666666666666671" width="48" height="35"/>
+                                        <color key="tintColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="0.75263073979999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="trash.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="deleteNoteBtnActn:" destination="Z93-dS-yYU" eventType="touchUpInside" id="LcP-OA-OsT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Mip-sv-h8Q" firstAttribute="centerY" secondItem="JXI-RQ-kDs" secondAttribute="centerY" id="5G3-2D-jpT"/>
+                                    <constraint firstItem="quc-5H-e5b" firstAttribute="centerY" secondItem="Mip-sv-h8Q" secondAttribute="centerY" id="677-Hm-DFe"/>
+                                    <constraint firstAttribute="trailing" secondItem="quc-5H-e5b" secondAttribute="trailing" constant="15" id="AF2-4U-ulF"/>
+                                    <constraint firstItem="Mip-sv-h8Q" firstAttribute="leading" secondItem="JXI-RQ-kDs" secondAttribute="leading" constant="15" id="BSe-qG-lr7"/>
+                                    <constraint firstAttribute="height" constant="60" id="YAi-wA-XzF"/>
+                                    <constraint firstItem="quc-5H-e5b" firstAttribute="leading" secondItem="Mip-sv-h8Q" secondAttribute="trailing" constant="15" id="qVR-0G-UGH"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="DGF-38-gmf">
+                                <rect key="frame" x="15" y="134" width="363" height="614"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbH-Px-ePU">
+                                <rect key="frame" x="259.33333333333331" y="763" width="118.66666666666669" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="L4M-7I-Kts"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save Note" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" red="0.91764705879999997" green="0.89411764709999997" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveNoteBtnActn:" destination="Z93-dS-yYU" eventType="touchUpInside" id="egN-a8-RLu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NUR-XG-MMr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NUR-XG-MMr" firstAttribute="trailing" secondItem="JXI-RQ-kDs" secondAttribute="trailing" id="9d3-q2-NW0"/>
+                            <constraint firstItem="JXI-RQ-kDs" firstAttribute="top" secondItem="NUR-XG-MMr" secondAttribute="top" id="R2D-QH-mW9"/>
+                            <constraint firstItem="NUR-XG-MMr" firstAttribute="trailing" secondItem="pbH-Px-ePU" secondAttribute="trailing" constant="15" id="R7s-cd-PE7"/>
+                            <constraint firstItem="DGF-38-gmf" firstAttribute="top" secondItem="JXI-RQ-kDs" secondAttribute="bottom" constant="15" id="ZqL-Ok-rjH"/>
+                            <constraint firstItem="NUR-XG-MMr" firstAttribute="trailing" secondItem="DGF-38-gmf" secondAttribute="trailing" constant="15" id="cdl-kT-bP1"/>
+                            <constraint firstItem="JXI-RQ-kDs" firstAttribute="leading" secondItem="NUR-XG-MMr" secondAttribute="leading" id="obh-RO-QXG"/>
+                            <constraint firstItem="DGF-38-gmf" firstAttribute="leading" secondItem="NUR-XG-MMr" secondAttribute="leading" constant="15" id="t4h-cU-2e4"/>
+                            <constraint firstItem="pbH-Px-ePU" firstAttribute="top" secondItem="DGF-38-gmf" secondAttribute="bottom" constant="15" id="udd-6x-ca6"/>
+                            <constraint firstItem="NUR-XG-MMr" firstAttribute="bottom" secondItem="pbH-Px-ePU" secondAttribute="bottom" constant="15" id="ytB-dC-APA"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="contentTv" destination="DGF-38-gmf" id="PwI-Hi-MaW"/>
+                        <outlet property="headingTf" destination="Mip-sv-h8Q" id="kT8-6O-CD7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ySU-ia-afu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1771.7557251908397" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="trash.fill" catalog="system" width="117" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

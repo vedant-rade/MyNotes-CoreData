@@ -22,6 +22,7 @@ class IntroVC: UIViewController {
     
     @IBAction func continueBtnTapped(_ sender: Any) {
         UserDefaultsManager.shared.setUsername(nameTf.text ?? "")
+        NoteListManager().createNoteList(noteList: NoteListModel(id: UUID(), name: "All Notes", dateCreated: Date()))
         self.pushMyNotesVC()
     }
     

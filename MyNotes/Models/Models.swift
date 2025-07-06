@@ -13,4 +13,11 @@ struct NoteModel {
     let dateCreated: Date?
     let dateModified: Date?
     let id: UUID
+    let noteList: NoteListModel
+}
+
+struct NoteListModel {
+    let id: UUID
+    let name: String
+    let dateCreated: Date
 }

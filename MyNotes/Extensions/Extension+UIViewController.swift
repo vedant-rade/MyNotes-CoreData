@@ -30,6 +30,29 @@ extension UIViewController {
 
         present(alert, animated: true)
     }
+    
+    func showInputAlert(title: String, message: String, onComplete: @escaping (String?) -> Void) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        // Add textfield
+        alert.addTextField { textField in
+            textField.placeholder = ""
+        }
+
+        // Cancel Action
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+
+        // OK Action
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            let text = alert.textFields?.first?.text
+            onComplete(text)
+        }
+
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+
+        present(alert, animated: true)
+    }
 }
 
 

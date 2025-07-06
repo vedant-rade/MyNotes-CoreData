@@ -6,5 +6,12 @@
         <attribute name="dateModified" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="heading" optional="YES" attributeType="String"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="noteList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NoteList" inverseName="notes" inverseEntity="NoteList"/>
+    </entity>
+    <entity name="NoteList" representedClassName="NoteList" syncable="YES" codeGenerationType="class">
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="notes" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="noteList" inverseEntity="Note"/>
     </entity>
 </model>

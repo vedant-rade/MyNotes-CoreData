@@ -34,7 +34,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HLB-6D-x1P">
-                                <rect key="frame" x="0.0" y="134" width="393" height="684"/>
+                                <rect key="frame" x="0.0" y="194" width="393" height="624"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="P9m-sL-F5a"/>
@@ -56,24 +56,68 @@
                                     <action selector="newNoteBtnActn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="v1m-aE-KZ3"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8KJ-wI-1bL">
+                                <rect key="frame" x="0.0" y="119" width="264.33333333333331" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Ffb-Qk-TnK"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cP6-fD-hkI">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="fRW-gw-7WK"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="02Y-Gb-Kh5"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9M-eA-JYM">
+                                <rect key="frame" x="329" y="131.66666666666666" width="49" height="35"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus.app.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="newListBtnActn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9rI-oq-IxV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Oc-zz-GJc">
+                                <rect key="frame" x="279.33333333333331" y="131.66666666666666" width="49.666666666666686" height="35"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="pencil.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="editListsBtnActn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lCA-qX-5oO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Vap-AQ-asN" secondAttribute="trailing" id="2r1-O6-6SH"/>
+                            <constraint firstItem="o9M-eA-JYM" firstAttribute="leading" secondItem="5Oc-zz-GJc" secondAttribute="trailing" id="Fnm-nr-SdG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="HLB-6D-x1P" secondAttribute="bottom" id="Ks7-AM-mE6"/>
+                            <constraint firstItem="5Oc-zz-GJc" firstAttribute="leading" secondItem="8KJ-wI-1bL" secondAttribute="trailing" constant="15" id="Rdu-Km-C1j"/>
+                            <constraint firstItem="o9M-eA-JYM" firstAttribute="centerY" secondItem="8KJ-wI-1bL" secondAttribute="centerY" id="Z1O-RY-Iky"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Kue-DS-PaX" secondAttribute="bottom" constant="15" id="ctH-50-xvT"/>
                             <constraint firstItem="Vap-AQ-asN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jY0-7v-iOm"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="o9M-eA-JYM" secondAttribute="trailing" constant="15" id="kl2-p3-DwK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Kue-DS-PaX" secondAttribute="trailing" constant="15" id="kq0-HR-fsa"/>
+                            <constraint firstItem="5Oc-zz-GJc" firstAttribute="centerY" secondItem="8KJ-wI-1bL" secondAttribute="centerY" id="mfH-Xl-WaB"/>
                             <constraint firstItem="Vap-AQ-asN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="oHv-hq-VvG"/>
-                            <constraint firstItem="HLB-6D-x1P" firstAttribute="top" secondItem="Vap-AQ-asN" secondAttribute="bottom" constant="15" id="sUA-BL-ylr"/>
+                            <constraint firstItem="8KJ-wI-1bL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="u0f-U1-rTH"/>
+                            <constraint firstItem="HLB-6D-x1P" firstAttribute="top" secondItem="8KJ-wI-1bL" secondAttribute="bottom" constant="15" id="vNa-q0-0LM"/>
                             <constraint firstItem="HLB-6D-x1P" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wKv-kO-8RJ"/>
+                            <constraint firstItem="8KJ-wI-1bL" firstAttribute="top" secondItem="Vap-AQ-asN" secondAttribute="bottom" id="wbn-Vq-ZTA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HLB-6D-x1P" secondAttribute="trailing" id="zZQ-gE-xH0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VfY-2V-NE3"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="collectionView" destination="8KJ-wI-1bL" id="gnx-a5-zvz"/>
                         <outlet property="greetingLbl" destination="Rva-7v-sSm" id="SRo-ic-Mch"/>
                         <outlet property="newNoteBtn" destination="Kue-DS-PaX" id="fmH-Mi-gSM"/>
                         <outlet property="tableView" destination="HLB-6D-x1P" id="TK5-aw-Chs"/>
@@ -166,14 +210,105 @@
             </objects>
             <point key="canvasLocation" x="1771.7557251908397" y="-2.1126760563380285"/>
         </scene>
+        <!--Note ListVC-->
+        <scene sceneID="sr2-wr-gPq">
+            <objects>
+                <viewController storyboardIdentifier="NoteListVC" id="fhV-67-vNC" customClass="NoteListVC" customModule="MyNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b6E-kM-9qs">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23P-1b-GCb">
+                                <rect key="frame" x="0.0" y="59" width="393" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Watchlists" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vz3-T3-7wR">
+                                        <rect key="frame" x="81" y="12.333333333333329" width="166" height="35.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBU-cw-r8i">
+                                        <rect key="frame" x="15" y="12.666666666666671" width="51" height="35"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.backward.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="backTapped:" destination="fhV-67-vNC" eventType="touchUpInside" id="EjS-nB-ILU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="vz3-T3-7wR" firstAttribute="centerY" secondItem="23P-1b-GCb" secondAttribute="centerY" id="C1j-Ae-7J2"/>
+                                    <constraint firstItem="vz3-T3-7wR" firstAttribute="leading" secondItem="CBU-cw-r8i" secondAttribute="trailing" constant="15" id="IwY-RM-iBK"/>
+                                    <constraint firstItem="CBU-cw-r8i" firstAttribute="leading" secondItem="23P-1b-GCb" secondAttribute="leading" constant="15" id="WtD-Ur-gfT"/>
+                                    <constraint firstAttribute="height" constant="60" id="djQ-xP-tZA"/>
+                                    <constraint firstItem="CBU-cw-r8i" firstAttribute="centerY" secondItem="23P-1b-GCb" secondAttribute="centerY" id="mJb-Kc-72L"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2li-e0-UhF">
+                                <rect key="frame" x="0.0" y="119" width="393" height="699"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="fhV-67-vNC" id="bPn-fn-rdO"/>
+                                    <outlet property="delegate" destination="fhV-67-vNC" id="30H-km-b21"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugm-sb-Iu2">
+                                <rect key="frame" x="199.66666666666663" y="763" width="178.33333333333337" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="FDc-H5-aNc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Create Note List" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" red="0.91764705879999997" green="0.89411764709999997" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="newListBtnActn:" destination="fhV-67-vNC" eventType="touchUpInside" id="5pj-H8-6Q0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="m7H-hS-fE3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m7H-hS-fE3" firstAttribute="bottom" secondItem="2li-e0-UhF" secondAttribute="bottom" id="4Bl-gq-cbr"/>
+                            <constraint firstItem="2li-e0-UhF" firstAttribute="leading" secondItem="m7H-hS-fE3" secondAttribute="leading" id="CUS-Zt-u2f"/>
+                            <constraint firstItem="m7H-hS-fE3" firstAttribute="trailing" secondItem="23P-1b-GCb" secondAttribute="trailing" id="DOX-8T-l1r"/>
+                            <constraint firstItem="m7H-hS-fE3" firstAttribute="trailing" secondItem="2li-e0-UhF" secondAttribute="trailing" id="LFd-QN-49g"/>
+                            <constraint firstItem="m7H-hS-fE3" firstAttribute="bottom" secondItem="ugm-sb-Iu2" secondAttribute="bottom" constant="15" id="LvM-Dh-P1Z"/>
+                            <constraint firstItem="23P-1b-GCb" firstAttribute="leading" secondItem="m7H-hS-fE3" secondAttribute="leading" id="Mu9-Wc-gIQ"/>
+                            <constraint firstItem="m7H-hS-fE3" firstAttribute="trailing" secondItem="ugm-sb-Iu2" secondAttribute="trailing" constant="15" id="Tul-BH-Bv8"/>
+                            <constraint firstItem="23P-1b-GCb" firstAttribute="top" secondItem="m7H-hS-fE3" secondAttribute="top" id="bN3-e6-q22"/>
+                            <constraint firstItem="2li-e0-UhF" firstAttribute="top" secondItem="23P-1b-GCb" secondAttribute="bottom" id="qvn-S0-nec"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="2li-e0-UhF" id="WPY-RC-W2T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nW4-d2-ZfT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2564" y="19"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="104"/>
+        <image name="pencil.circle" catalog="system" width="128" height="123"/>
+        <image name="plus.app.fill" catalog="system" width="128" height="114"/>
         <image name="trash.fill" catalog="system" width="117" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

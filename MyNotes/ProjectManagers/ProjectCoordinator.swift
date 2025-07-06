@@ -22,12 +22,21 @@ extension UIViewController {
         }
     }
     
-    func pushNoteVC(isNewNote: Bool, noteData: NoteModel? = nil) {
+    func pushNoteVC(isNewNote: Bool, noteData: NoteModel? = nil, noteList: NoteListModel? = nil) {
         let storyboard = UIStoryboard(name: "Notes", bundle: nil)
         if let noteVC = storyboard.instantiateViewController(withIdentifier: "NoteVC") as? NoteVC {
             noteVC.noteData = noteData
             noteVC.isNewNote = isNewNote
+            noteVC.noteList = noteList
             self.navigationController?.pushViewController(noteVC, animated: true)
+        }
+    }
+    
+    func pushToNoteListVC(noteLists: [NoteListModel]) {
+        let storyboard = UIStoryboard(name: "Notes", bundle: nil)
+        if let noteListVC = storyboard.instantiateViewController(withIdentifier: "NoteListVC") as? NoteListVC {
+            noteListVC.noteLists = noteLists
+            self.navigationController?.pushViewController(noteListVC, animated: true)
         }
     }
 }

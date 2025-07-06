@@ -45,6 +45,7 @@ class NotesTVCell: UITableViewCell {
     }
     
     func configureData(data: NoteModel, indexPath: Int) {
+        
         self.headingLbl.text = data.heading
         self.contentLbl.text = data.content
         self.indexPath = indexPath

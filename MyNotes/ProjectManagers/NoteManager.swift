@@ -11,22 +11,25 @@ struct NoteManager {
     private let noteRepo = NoteRepository()
     
     func createNote(note: NoteModel) {
-        noteRepo.createNote(note: note)
+        noteRepo.createRecord(record: note)
     }
     
-    func fetchAllNotes() -> [NoteModel]? {
-        return noteRepo.getAllNotes()
+    func fetchAllNotes(noteList: NoteListModel?) -> [NoteModel]? {
+        if let list = noteList {
+            return noteRepo.getAllRecords(noteList: list)
+        }
+        return noteRepo.getAllRecords()
     }
     
     func deleteNote(id: UUID) -> Bool {
-        return noteRepo.deleteNote(id: id)
+        return noteRepo.deleteRecord(id: id)
     }
     
     func updateNote(note: NoteModel) -> Bool {
-        return noteRepo.updateNote(note: note)
+        return noteRepo.updateRecord(record: note)
     }
     
     func fetchNote(byIdentifier id: UUID) -> NoteModel? {
-        return noteRepo.getNote(byIdentifier: id)
+        return noteRepo.getRecord(byIdentifier: id)
     }
 }

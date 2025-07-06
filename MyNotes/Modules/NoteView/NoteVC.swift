@@ -13,8 +13,10 @@ class NoteVC: UIViewController {
     @IBOutlet weak var headingTf: UITextField!
     
     var isNewNote: Bool = true
+    var noteList: NoteListModel?
     var noteData: NoteModel?
     private let manager = NoteManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +28,9 @@ class NoteVC: UIViewController {
     
     @IBAction func saveNoteBtnActn(_ sender: UIButton) {
         if isNewNote {
-            manager.createNote(note: NoteModel(heading: headingTf.text ?? "", content: contentTv.text ?? "", dateCreated: Date(), dateModified: Date(), id: UUID()))
+            manager.createNote(note: NoteModel(heading: headingTf.text ?? "", content: contentTv.text ?? "", dateCreated: Date(), dateModified: Date(), id: UUID(), noteList: self.noteList ?? NoteListModel(id: UUID(), name: "", dateCreated: Date())))
         } else {
-            if manager.updateNote(note: NoteModel(heading: headingTf.text ?? "", content: contentTv.text ?? "", dateCreated: noteData?.dateCreated, dateModified: Date(), id: noteData?.id ?? UUID())) {
+            if manager.updateNote(note: NoteModel(heading: headingTf.text ?? "", content: contentTv.text ?? "", dateCreated: noteData?.dateCreated, dateModified: Date(), id: noteData?.id ?? UUID(), noteList: noteData?.noteList ?? NoteListModel(id: UUID(), name: "", dateCreated: Date()))) {
             } else {
                 self.showAlert("Error", "Unable to delete note")
             }
